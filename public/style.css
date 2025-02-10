@@ -1,0 +1,130 @@
+body{
+    background-color: black;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+
+    background-image: radial-gradient(
+            at 49% 43%,
+            hsla(169, 65%, 62%, 1) 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 10% 73%, rgb(31, 0, 82) 0px, transparent 50%),
+        radial-gradient(at 56% 66%, rgb(38, 179, 80) 0px, transparent 50%),
+        radial-gradient(at 65% 6%, rgb(20, 27, 32) 0px, transparent 50%),
+        radial-gradient(at 88% 77%, rgb(73, 2, 54) 0px, transparent 50%),
+        radial-gradient(at 3% 25%, rgb(13, 36, 34) 0px, transparent 50%),
+        radial-gradient(at 40% 37%, rgb(70, 10, 7) 0px, transparent 50%);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+
+}
+
+footer {
+    text-align: end;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.row{
+    border: 1px solid white;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+}
+
+.row.odd{   
+    background-color: darkolivegreen;
+}
+
+.row.even {
+    background-color: darkslateblue;
+}
+
+.row.add {
+    height: 2vw;
+}
+
+.col {
+    padding: 20px;
+    flex: 1;
+}
+
+.col-logo {
+    flex: 2;
+    margin: 0%;
+    padding: 1hvw;
+    height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.menu {
+    font-weight: bold;
+    font-size: 18;
+    background-color: darkslategrey;
+    height: 4vw;
+    display: flex;
+}
+
+.menuUL a {
+    border: 2px solid white;
+    height: 4vw;
+    padding: 10px;
+  }
+  
+  a:visited {
+    color: lightgray;
+    border: 2px solid lightgray;
+  }
+
+.menuUL {
+    height: 4vw;
+    display: flex;
+}
+
+.menuUL li{
+    height: 4vw;
+    width: 8vw;
+    flex: 1;
+}
+
+
+.alert {
+    width: 25vw;
+    margin: 2vw;
+    padding: 1vw;
+    border: 2px solid white ;
+}
+
+.alert-success{
+    background-color: rgba(104, 255, 58, 0.938);
+    color: rgb(0, 54, 0);
+    border-color: rgb(0, 54, 4);
+}
+
+.alert-warning {
+    background-color: rgb(255, 77, 77);
+    color: rgb(71, 1, 1);
+    border-color: rgb(71, 1, 1);
+}
+
+.delete-button {
+    background-color: rgb(128, 3, 3);
+    border: 2px solid black;
+    color: white;
+}
+
+.logo-img {
+    margin: 0px;
+    height: 4vw;
+    width: auto;
+}
