@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fuel;
 use Illuminate\Http\Request;
 
 class FuelController extends Controller
@@ -11,7 +12,8 @@ class FuelController extends Controller
      */
     public function index()
     {
-        //
+        $fuels = Fuel::all();
+        return view('fuels.index', compact('fuels'));
     }
 
     /**
@@ -19,7 +21,7 @@ class FuelController extends Controller
      */
     public function create()
     {
-        //
+        return view('fuels.create');
     }
 
     /**
@@ -27,7 +29,16 @@ class FuelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            ['name' => 'required|min:3|max:255'],
+            ['name.required' => 'Az üzemanyag típusát kötelező kitölteni!',
+             'name.min' => 'Az üzemanyag típusa legalább 3 karakter hosszú kell legyen!',
+             'name.max' => 'Az üzemanyag típusa hosszabb a megengedettnél!',]
+        );
+
+        Fuel::create($request->all());
+
+        return redirect()->route('fuels.index')->with('success', 'A gyártó sikeresen hozzáadva!');
     }
 
     /**
@@ -59,6 +70,9 @@ class FuelController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $fuel = Fuel::find($id);
+        $fuel->delete();
+
+        return redirect()->route('fuels.index')->with('success', 'Üzemanyag sikeresen törölve!');
     }
 }

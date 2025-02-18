@@ -10,7 +10,7 @@
 
 <form action="{{route('makers.update',  $maker->id)}}" method="POST">
     @csrf
-    @method('PUT')
+    @method('PATCH')
     <fieldset>
         <label for="name">Gyártó név</label>
         <input type="text" name="name" id="name" value="{{old('name', $maker->name)}}">

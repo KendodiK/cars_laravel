@@ -30,9 +30,9 @@
                     {{--<li><a href="{{ route('models.index') }}">Modellek</a></li>
                     <li><a href="{{ route('trims.index') }}">Típusok</a></li>
                     <li><a href="{{ route('bodies.index') }}">Karosszériák</a></li>
-                    <li><a href="{{ route('transmissions.index') }}">Sebváltók</a></li>
+                    <li><a href="{{ route('transmissions.index') }}">Sebváltók</a></li>--}}
                     <li><a href="{{ route('fuels.index') }}">Üzemanyagok</a></li>
-                    @if(auth()->check())
+                    {{---@if(auth()->check())
                         <li>
                             <form class="logout" action="{{ route('logout') }}" method="post">
                                 @csrf

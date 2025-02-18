@@ -8,4 +8,5 @@ class Fuel extends Model
 {
     public $timestamps = false;
 
+    protected $fillable = ['name'];
 }
