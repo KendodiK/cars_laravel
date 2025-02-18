@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BasicRequest;
 use App\Models\Fuel;
 use Illuminate\Http\Request;
 
@@ -27,15 +28,8 @@ class FuelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BasicRequest $request)
     {
-        $request->validate(
-            ['name' => 'required|min:3|max:255'],
-            ['name.required' => 'Az üzemanyag típusát kötelező kitölteni!',
-             'name.min' => 'Az üzemanyag típusa legalább 3 karakter hosszú kell legyen!',
-             'name.max' => 'Az üzemanyag típusa hosszabb a megengedettnél!',]
-        );
-
         Fuel::create($request->all());
 
         return redirect()->route('fuels.index')->with('success', 'A gyártó sikeresen hozzáadva!');
@@ -60,7 +54,7 @@ class FuelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(BasicRequest $request, string $id)
     {
         //
     }

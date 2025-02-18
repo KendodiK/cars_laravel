@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BasicRequest;
 use Illuminate\Http\Request;
 use App\Models\Maker;
 
@@ -33,14 +34,11 @@ class MakerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BasicRequest $request)
     {
         $request->validate(
-            ['name' => 'required|min:3|max:255', 'logo' => 'min:5|max:255'],
-            ['name.required' => 'A gyártó nevét kötelező kitölteni!',
-             'name.min' => 'A gyártó neve legalább 3 karakter hosszú kell legyen!',
-             'name.max' => 'A gyártó neve hosszabb a megengedettnél!',
-             'logo.min' => 'A kép neve legalább 3 karakter hoszú legyen! (*elérési út/*név.kiterjesztés)',
+            ['logo' => 'min:3|max:255'],
+            ['logo.min' => 'A kép neve legalább 3 karakter hoszú legyen! (*elérési út/*név.kiterjesztés)',
              'logo.max' => 'A kép neve hosszabb a megengedettnél!',]
         );
 
@@ -69,14 +67,11 @@ class MakerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(BasicRequest $request, string $id)
     {
         $request->validate(
-            ['name' => 'required|min:3|max:255', 'logo' => 'min:3|max:255'],
-            ['name.required' => 'A gyártó nevét kötelező kitölteni!',
-             'name.min' => 'A gyártó neve legalább 3 karakter hosszú kell legyen!',
-             'name.max' => 'A gyártó neve hosszabb a megengedettnél!',
-             'logo.min' => 'A kép neve legalább 3 karakter hoszú legyen! (*elérési út/*név.kiterjesztés)',
+            ['logo' => 'min:3|max:255'],
+            ['logo.min' => 'A kép neve legalább 3 karakter hoszú legyen! (*elérési út/*név.kiterjesztés)',
              'logo.max' => 'A kép neve hosszabb a megengedettnél!',]
         );
 
